@@ -40,4 +40,5 @@ public class Address {
                fetch = FetchType.EAGER, mappedBy = "location")
     private Announcement announcement;
 
+
 }
