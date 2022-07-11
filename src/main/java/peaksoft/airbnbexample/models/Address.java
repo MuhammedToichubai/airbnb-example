@@ -5,9 +5,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
 
 import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.EAGER;
+import static javax.persistence.FetchType.LAZY;
 
 /**
  * @author Muhammed Toichubai
@@ -15,7 +16,8 @@ import static javax.persistence.CascadeType.*;
 @Entity
 @Table(name = "addresses")
 @NoArgsConstructor
-@Getter @Setter
+@Getter
+@Setter
 public class Address {
     @Id
     @GeneratedValue(
@@ -29,15 +31,16 @@ public class Address {
     )
     private Long id;
 
-    @ElementCollection
-    private List<String> region;
+    @ManyToOne(cascade = ALL, fetch = LAZY)
+    private Region region;
 
     private String city;
 
     private String address;
 
-    @OneToOne(cascade = {DETACH,PERSIST,MERGE,REFRESH},
-               fetch = FetchType.EAGER, mappedBy = "location")
+    @OneToOne
+            (cascade = {DETACH, REFRESH, PERSIST, MERGE},
+                    fetch = FetchType.LAZY)
     private Announcement announcement;
 
 

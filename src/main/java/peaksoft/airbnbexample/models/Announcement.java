@@ -14,6 +14,7 @@ import java.util.List;
 
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.EAGER;
+import static javax.persistence.FetchType.LAZY;
 
 /**
  * @author Muhammed Toichubai
@@ -47,9 +48,7 @@ public class Announcement {
 
     private BigDecimal price;
 
-    @OneToMany(cascade = ALL,
-               fetch = EAGER,
-               mappedBy = "announcement")
+    @OneToMany(cascade = ALL, mappedBy = "announcement" ,fetch = EAGER)
     private List<Feedback> feedbacks;
 
     private Integer maxGuests;
@@ -57,23 +56,19 @@ public class Announcement {
     private Type houseType;
 
     @ManyToOne(cascade = {DETACH, MERGE, PERSIST, REFRESH},
-               fetch = EAGER)
+            fetch = LAZY)
     private User owner;
 
-    @OneToOne(cascade = ALL)
+    @OneToOne(cascade = ALL, fetch = LAZY, mappedBy = "announcement")
     private Address location;
 
-    @ManyToMany(cascade = {
-            REMOVE,
-            DETACH,
-            MERGE,
-            PERSIST,
-            REFRESH},
-    fetch = EAGER)
+    @ManyToMany(cascade = ALL,
+
+            fetch = LAZY)
     private List<User> guests;
 
     @OneToMany(cascade = ALL,
-            mappedBy = "announcement")
+            mappedBy = "announcement", fetch = LAZY)
     private List<Booking> bookings;
 
     private LocalDate createdAt;

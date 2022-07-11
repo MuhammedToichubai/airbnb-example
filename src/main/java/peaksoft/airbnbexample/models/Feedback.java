@@ -6,11 +6,12 @@ import lombok.Setter;
 import peaksoft.airbnbexample.models.auth.User;
 
 import javax.persistence.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
 import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.EAGER;
+import static javax.persistence.FetchType.LAZY;
 
 /**
  * @author Muhammed Toichubai
@@ -24,21 +25,14 @@ public class Feedback {
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "feedback_id_generator"
-    )
+            generator = "feedback_id_generator")
     @SequenceGenerator(
             name = "feedback_id_generator",
             sequenceName = "feedback_seq",
-            allocationSize = 1
-    )
+            allocationSize = 1)
     private Long id;
 
-    @ManyToOne(cascade = {
-            DETACH,
-            MERGE,
-            PERSIST,
-            REFRESH }
-    )
+    @ManyToOne(cascade = {REFRESH, PERSIST, DETACH, MERGE}, fetch = EAGER)
     private User owner;
 
     @ElementCollection
@@ -46,18 +40,16 @@ public class Feedback {
 
     private String description;
 
+    @Column(name = "likes")
     private Integer like;
 
-    private Integer disLike;
+//    @Column(name = "dislikes")
+    private Integer dislike;
 
+//    @Column(name = "ratings")
     private Integer rating;
 
-    @ManyToOne(cascade = {
-            DETACH,
-            MERGE,
-            PERSIST,
-            REFRESH
-    }, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = ALL, fetch = LAZY)
     private Announcement announcement;
 
     private LocalDate createdAt;

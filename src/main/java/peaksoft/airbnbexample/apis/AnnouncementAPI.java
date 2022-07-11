@@ -1,8 +1,12 @@
 package peaksoft.airbnbexample.apis;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import peaksoft.airbnbexample.dto.announcement.AnnouncementRequest;
+import peaksoft.airbnbexample.dto.announcement.AnnouncementResponse;
+import peaksoft.airbnbexample.services.AnnouncementService;
+
+import java.util.List;
 
 /**
  * @author Muhammed Toichubai
@@ -11,5 +15,31 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("/api/announcement")
 public class AnnouncementAPI {
+
+//    private final AnnouncementService announcementService;
+//
+//    public AnnouncementAPI(AnnouncementService service) {
+//        this.announcementService = service;
+//    }
+//
+//    @PostMapping("/save")
+//    public AnnouncementResponse save(@RequestBody AnnouncementRequest request) {
+//        return announcementService.save(request);
+//    }
+//
+//    @PutMapping("/update/{id}")
+//    public AnnouncementResponse update(@PathVariable Long id, @RequestBody AnnouncementRequest request) {
+//        return announcementService.update(id, request);
+//    }
+//
+//    @GetMapping("/findById/{id}")
+//    public AnnouncementResponse findById(@PathVariable Long id) {
+//        return announcementService.findById(id);
+//    }
+//
+//    @DeleteMapping("/delete/{id}")
+//    public AnnouncementResponse deleteCompanyById(@PathVariable Long id) {
+//        return announcementService.deleteBy(id);
+//    }
 
 }

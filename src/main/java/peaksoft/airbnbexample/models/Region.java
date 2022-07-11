@@ -7,6 +7,9 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.util.List;
 
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.EAGER;
+
 /**
  * @author Muhammed Toichubai
  */
@@ -17,15 +20,23 @@ import java.util.List;
 @Setter
 public class Region {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-                     generator = "region_id_generator")
-    @SequenceGenerator(name = "region_id_generator",
-    sequenceName = "region_id_seq",
-    allocationSize = 1)
-    private  Long id;
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "region_id_generator")
+    @SequenceGenerator(
+            name = "region_id_generator",
+            sequenceName = "region_seq",
+            allocationSize = 1)
+    private Long id;
 
     private String regionName;
 
-//    @OneToMany(cascade = {})
-//    private List<Address> addresses;
+    @OneToMany(cascade = {
+            REFRESH,
+            MERGE,
+            DETACH,
+            PERSIST},
+            fetch = EAGER,
+            mappedBy = "region")
+    private List<Address> addresses;
 }

@@ -5,7 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import peaksoft.airbnbexample.models.Announcement;
-import peaksoft.airbnbexample.models.Booking;
 import peaksoft.airbnbexample.models.Feedback;
 
 import javax.persistence.*;
@@ -13,6 +12,7 @@ import java.util.List;
 
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.EAGER;
+import static javax.persistence.FetchType.LAZY;
 
 /**
  * @author Muhammed Toichubai
@@ -25,11 +25,13 @@ import static javax.persistence.FetchType.EAGER;
 @Setter
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-    generator = "users_id_generator")
-    @SequenceGenerator(name = "users_id_generator",
-    sequenceName = "announcement_seq",
-    allocationSize = 1)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "users_id_generator")
+    @SequenceGenerator(
+            name = "users_id_generator",
+            sequenceName = "user_seq",
+            allocationSize = 1)
 
     private Long id;
 
@@ -41,15 +43,12 @@ public class User {
 
     private String image;
 
-    @OneToMany(cascade = {MERGE, DETACH, PERSIST, REFRESH}, fetch = EAGER)
+    @OneToMany(cascade = ALL, fetch = LAZY)
     private List<Announcement> announcements;
 
-    @OneToMany(cascade = {ALL}, fetch = EAGER)
-    private List<Booking> bookings;
-
-    @OneToMany(cascade = ALL, fetch = EAGER)
+    @OneToMany(cascade = ALL, fetch = LAZY, mappedBy = "owner")
     private List<Feedback> feedbacks;
 
-    @OneToOne(cascade = ALL, fetch = EAGER)
+    @OneToOne(cascade = ALL, fetch = LAZY)
     private Role role;
 }

@@ -7,7 +7,6 @@ import peaksoft.airbnbexample.models.auth.User;
 import peaksoft.airbnbexample.models.enums.Status;
 
 import javax.persistence.*;
-
 import java.time.LocalDate;
 
 import static javax.persistence.CascadeType.*;
@@ -23,11 +22,13 @@ import static javax.persistence.CascadeType.*;
 @Setter
 public class Booking {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,
-                    generator = "booking_id_generator")
-    @SequenceGenerator(name = "booking_id_generator",
-                       sequenceName = "booking_seq",
-                       allocationSize = 1)
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "booking_id_generator")
+    @SequenceGenerator(
+            name = "booking_id_generator",
+            sequenceName = "booking_seq",
+            allocationSize = 1)
     private Long id;
 
     @ManyToOne(cascade = {
@@ -41,7 +42,7 @@ public class Booking {
             DETACH,
             MERGE,
             PERSIST,
-            REFRESH}, fetch = FetchType.LAZY)
+            REFRESH}, fetch = FetchType.EAGER)
     private Announcement announcement;
 
     private LocalDate checkin;
