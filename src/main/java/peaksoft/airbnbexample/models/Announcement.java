@@ -63,13 +63,17 @@ public class Announcement {
     @OneToOne(cascade = ALL)
     private Address location;
 
-    @ManyToMany(cascade = {DETACH,
+    @ManyToMany(cascade = {
+            REMOVE,
+            DETACH,
             MERGE,
             PERSIST,
-            REFRESH})
+            REFRESH},
+    fetch = EAGER)
     private List<User> guests;
 
-    @OneToMany(cascade = ALL,mappedBy = "announcement")
+    @OneToMany(cascade = ALL,
+            mappedBy = "announcement")
     private List<Booking> bookings;
 
     private LocalDate createdAt;

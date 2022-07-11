@@ -4,8 +4,15 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import peaksoft.airbnbexample.models.Announcement;
+import peaksoft.airbnbexample.models.Booking;
+import peaksoft.airbnbexample.models.Feedback;
 
 import javax.persistence.*;
+import java.util.List;
+
+import static javax.persistence.CascadeType.*;
+import static javax.persistence.FetchType.EAGER;
 
 /**
  * @author Muhammed Toichubai
@@ -32,6 +39,17 @@ public class User {
 
     private String password;
 
-    @OneToOne
+    private String image;
+
+    @OneToMany(cascade = {MERGE, DETACH, PERSIST, REFRESH}, fetch = EAGER)
+    private List<Announcement> announcements;
+
+    @OneToMany(cascade = {ALL}, fetch = EAGER)
+    private List<Booking> bookings;
+
+    @OneToMany(cascade = ALL, fetch = EAGER)
+    private List<Feedback> feedbacks;
+
+    @OneToOne(cascade = ALL, fetch = EAGER)
     private Role role;
 }
