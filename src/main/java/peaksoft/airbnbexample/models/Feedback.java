@@ -43,10 +43,9 @@ public class Feedback {
     @Column(name = "likes")
     private Integer like;
 
-//    @Column(name = "dislikes")
+
     private Integer dislike;
 
-//    @Column(name = "ratings")
     private Integer rating;
 
     @ManyToOne(cascade = ALL, fetch = LAZY)

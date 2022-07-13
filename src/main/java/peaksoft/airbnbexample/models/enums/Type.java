@@ -6,4 +6,6 @@ package peaksoft.airbnbexample.models.enums;
 public enum Type {
     APARTMENT,
     HOUSE
+    ;
+
 }

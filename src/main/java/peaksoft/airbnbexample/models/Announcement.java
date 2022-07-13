@@ -16,9 +16,6 @@ import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.FetchType.LAZY;
 
-/**
- * @author Muhammed Toichubai
- */
 @Entity
 @Table(name = "announcements")
 @NoArgsConstructor
@@ -56,7 +53,7 @@ public class Announcement {
     private Type houseType;
 
     @ManyToOne(cascade = {DETACH, MERGE, PERSIST, REFRESH},
-            fetch = LAZY)
+            fetch = EAGER)
     private User owner;
 
     @OneToOne(cascade = ALL, fetch = LAZY, mappedBy = "announcement")
@@ -64,7 +61,7 @@ public class Announcement {
 
     @ManyToMany(cascade = ALL,
 
-            fetch = LAZY)
+            fetch = EAGER)
     private List<User> guests;
 
     @OneToMany(cascade = ALL,

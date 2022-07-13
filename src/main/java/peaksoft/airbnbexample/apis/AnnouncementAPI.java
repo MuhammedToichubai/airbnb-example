@@ -12,16 +12,20 @@ import java.util.List;
  * @author Muhammed Toichubai
  */
 @RestController
-@RequiredArgsConstructor
-@RequestMapping("/api/announcement")
+@RequestMapping("/api/announcements")
 public class AnnouncementAPI {
 
-//    private final AnnouncementService announcementService;
-//
-//    public AnnouncementAPI(AnnouncementService service) {
-//        this.announcementService = service;
-//    }
-//
+    private final AnnouncementService announcementService;
+
+    public AnnouncementAPI(AnnouncementService service) {
+        this.announcementService = service;
+    }
+
+    @GetMapping
+    public List<AnnouncementResponse> getAll(){
+        return null;
+    }
+
 //    @PostMapping("/save")
 //    public AnnouncementResponse save(@RequestBody AnnouncementRequest request) {
 //        return announcementService.save(request);

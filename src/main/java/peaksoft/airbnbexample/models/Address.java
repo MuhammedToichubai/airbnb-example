@@ -7,7 +7,6 @@ import lombok.Setter;
 import javax.persistence.*;
 
 import static javax.persistence.CascadeType.*;
-import static javax.persistence.FetchType.EAGER;
 import static javax.persistence.FetchType.LAZY;
 
 /**
@@ -34,7 +33,7 @@ public class Address {
     @ManyToOne(cascade = ALL, fetch = LAZY)
     private Region region;
 
-    private String city;
+    private String townProvince;
 
     private String address;
 

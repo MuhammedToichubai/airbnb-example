@@ -43,7 +43,7 @@ public class User {
 
     private String image;
 
-    @OneToMany(cascade = ALL, fetch = LAZY)
+    @OneToMany(cascade = ALL, fetch = EAGER)
     private List<Announcement> announcements;
 
     @OneToMany(cascade = ALL, fetch = LAZY, mappedBy = "owner")
