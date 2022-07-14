@@ -9,5 +9,5 @@ import peaksoft.airbnbexample.dto.announcement.AnnouncementResponse;
  */
 @Service
 public interface AnnouncementService {
-    AnnouncementResponse save(AnnouncementRequest request);
+    AnnouncementResponse save(AnnouncementRequest request, Long userId);
 }

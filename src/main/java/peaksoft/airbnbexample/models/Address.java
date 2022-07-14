@@ -19,15 +19,8 @@ import static javax.persistence.FetchType.LAZY;
 @Setter
 public class Address {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "address_id_generator"
-    )
-    @SequenceGenerator(
-            name = "address_id_generator",
-            sequenceName = "address_seq",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "address_id_generator")
+    @SequenceGenerator(name = "address_id_generator", sequenceName = "address_seq", allocationSize = 1)
     private Long id;
 
     @ManyToOne(cascade = ALL, fetch = LAZY)
@@ -37,9 +30,7 @@ public class Address {
 
     private String address;
 
-    @OneToOne
-            (cascade = {DETACH, REFRESH, PERSIST, MERGE},
-                    fetch = FetchType.LAZY)
+    @OneToOne(cascade = {DETACH, REFRESH, PERSIST, MERGE}, fetch = FetchType.LAZY)
     private Announcement announcement;
 
 

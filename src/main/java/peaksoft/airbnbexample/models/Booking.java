@@ -22,27 +22,14 @@ import static javax.persistence.CascadeType.*;
 @Setter
 public class Booking {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "booking_id_generator")
-    @SequenceGenerator(
-            name = "booking_id_generator",
-            sequenceName = "booking_seq",
-            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "booking_id_generator")
+    @SequenceGenerator(name = "booking_id_generator", sequenceName = "booking_seq", allocationSize = 1)
     private Long id;
 
-    @ManyToOne(cascade = {
-            DETACH,
-            MERGE,
-            PERSIST,
-            REFRESH}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = {DETACH, MERGE, PERSIST, REFRESH}, fetch = FetchType.LAZY)
     private User user;
 
-    @ManyToOne(cascade = {
-            DETACH,
-            MERGE,
-            PERSIST,
-            REFRESH}, fetch = FetchType.EAGER)
+    @ManyToOne(cascade = {DETACH, MERGE, PERSIST, REFRESH}, fetch = FetchType.EAGER)
     private Announcement announcement;
 
     private LocalDate checkin;

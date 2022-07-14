@@ -23,15 +23,8 @@ import static javax.persistence.FetchType.LAZY;
 @Setter
 public class Announcement {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "announcement_id_generator"
-    )
-    @SequenceGenerator(
-            name = "announcement_id_generator",
-            sequenceName = "announcement_seq",
-            allocationSize = 1
-    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "announcement_id_generator")
+    @SequenceGenerator(name = "announcement_id_generator", sequenceName = "announcement_seq", allocationSize = 1)
     private Long id;
 
     private String title;
@@ -45,15 +38,14 @@ public class Announcement {
 
     private BigDecimal price;
 
-    @OneToMany(cascade = ALL, mappedBy = "announcement" ,fetch = EAGER)
+    @OneToMany(cascade = ALL, mappedBy = "announcement", fetch = EAGER)
     private List<Feedback> feedbacks;
 
     private Integer maxGuests;
 
     private Type houseType;
 
-    @ManyToOne(cascade = {DETACH, MERGE, PERSIST, REFRESH},
-            fetch = EAGER)
+    @ManyToOne(cascade = {DETACH, MERGE, PERSIST, REFRESH}, fetch = EAGER)
     private User owner;
 
     @OneToOne(cascade = ALL, fetch = LAZY, mappedBy = "announcement")
@@ -64,8 +56,7 @@ public class Announcement {
             fetch = EAGER)
     private List<User> guests;
 
-    @OneToMany(cascade = ALL,
-            mappedBy = "announcement", fetch = LAZY)
+    @OneToMany(cascade = ALL, mappedBy = "announcement", fetch = LAZY)
     private List<Booking> bookings;
 
     private LocalDate createdAt;

@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.mapper.view;
+package peaksoft.airbnbexample.mapper.announcement;
 
 import org.springframework.stereotype.Component;
 import peaksoft.airbnbexample.dto.announcement.AnnouncementResponse1;

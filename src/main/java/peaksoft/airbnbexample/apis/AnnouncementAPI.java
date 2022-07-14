@@ -26,24 +26,23 @@ public class AnnouncementAPI {
         return null;
     }
 
-//    @PostMapping("/save")
-//    public AnnouncementResponse save(@RequestBody AnnouncementRequest request) {
-//        return announcementService.save(request);
-//    }
-//
-//    @PutMapping("/update/{id}")
-//    public AnnouncementResponse update(@PathVariable Long id, @RequestBody AnnouncementRequest request) {
-//        return announcementService.update(id, request);
-//    }
-//
-//    @GetMapping("/findById/{id}")
-//    public AnnouncementResponse findById(@PathVariable Long id) {
-//        return announcementService.findById(id);
-//    }
-//
-//    @DeleteMapping("/delete/{id}")
-//    public AnnouncementResponse deleteCompanyById(@PathVariable Long id) {
-//        return announcementService.deleteBy(id);
-//    }
+    @PostMapping("/save/{userId}")
+    public AnnouncementResponse save(@RequestBody AnnouncementRequest request, @PathVariable Long userId) {
+        return announcementService.save(request, userId);
+    }
 
+    @PutMapping("/update/{id}")
+    public AnnouncementResponse update(@PathVariable Long id, @RequestBody AnnouncementRequest request) {
+        return announcementService.update(id, request);
+    }
+
+    @GetMapping("/findById/{id}")
+    public AnnouncementResponse findById(@PathVariable Long id) {
+        return announcementService.findById(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public AnnouncementResponse deleteCompanyById(@PathVariable Long id) {
+        return announcementService.deleteBy(id);
+    }
 }

@@ -17,7 +17,7 @@ public class AnnouncementServiceImpl implements AnnouncementService {
     }
 
     @Override
-    public AnnouncementResponse save(AnnouncementRequest request) {
+    public AnnouncementResponse save(AnnouncementRequest request, Long userId) {
         return null;
     }
 }

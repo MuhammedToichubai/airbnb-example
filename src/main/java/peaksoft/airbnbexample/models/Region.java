@@ -20,23 +20,12 @@ import static javax.persistence.FetchType.EAGER;
 @Setter
 public class Region {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "region_id_generator")
-    @SequenceGenerator(
-            name = "region_id_generator",
-            sequenceName = "region_seq",
-            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "region_id_generator")
+    @SequenceGenerator(name = "region_id_generator", sequenceName = "region_seq", allocationSize = 1)
     private Long id;
 
     private String regionName;
 
-    @OneToMany(cascade = {
-            REFRESH,
-            MERGE,
-            DETACH,
-            PERSIST},
-            fetch = EAGER,
-            mappedBy = "region")
+    @OneToMany(cascade = {REFRESH, MERGE, DETACH, PERSIST}, fetch = EAGER, mappedBy = "region")
     private List<Address> addresses;
 }

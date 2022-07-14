@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.mapper.edit;
+package peaksoft.airbnbexample.mapper.announcement;
 
 import org.springframework.stereotype.Component;
 import peaksoft.airbnbexample.dto.announcement.AnnouncementRequest1;
@@ -23,8 +23,7 @@ public class AnnouncementEditMapper {
     }
 
     public void updateAnnouncement(Announcement announcement, AnnouncementRequest1 request1){
-        Announcement announcement1 = new Announcement();
-        AnnouncementRequestToAnnouncement(request1, announcement1);
+        AnnouncementRequestToAnnouncement(request1, announcement);
 
     }
 
@@ -44,5 +43,6 @@ public class AnnouncementEditMapper {
         announcement.setLocation(address);
         announcement.setStatus(Status.NEW);
         announcement.setCreatedAt(LocalDate.now());
+
     }
 }

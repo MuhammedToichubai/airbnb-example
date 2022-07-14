@@ -21,6 +21,4 @@ public class AnnouncementRequest1 {
     private String region;
     private String townProvince;
     private String address;
-
-
 }

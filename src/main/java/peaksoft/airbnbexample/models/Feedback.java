@@ -23,13 +23,8 @@ import static javax.persistence.FetchType.LAZY;
 @Setter
 public class Feedback {
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "feedback_id_generator")
-    @SequenceGenerator(
-            name = "feedback_id_generator",
-            sequenceName = "feedback_seq",
-            allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "feedback_id_generator")
+    @SequenceGenerator(name = "feedback_id_generator", sequenceName = "feedback_seq", allocationSize = 1)
     private Long id;
 
     @ManyToOne(cascade = {REFRESH, PERSIST, DETACH, MERGE}, fetch = EAGER)
