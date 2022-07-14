@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.dto.region;
+package peaksoft.airbnbexample.dto.admin;
 
 import lombok.Getter;
 import lombok.Setter;

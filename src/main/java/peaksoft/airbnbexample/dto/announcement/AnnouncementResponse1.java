@@ -23,7 +23,7 @@ public class AnnouncementResponse1 {
     private BigDecimal price;
     private Integer maxGuests;
     private Type houseType;
-    private Long ownerId;
+
     private LocalDate createdAt;
 
 }

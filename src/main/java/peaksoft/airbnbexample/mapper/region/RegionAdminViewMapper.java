@@ -2,7 +2,7 @@ package peaksoft.airbnbexample.mapper.region;
 
 import lombok.Getter;
 import lombok.Setter;
-import peaksoft.airbnbexample.dto.region.RegionAdminResponse;
+import peaksoft.airbnbexample.dto.admin.RegionAdminResponse;
 import peaksoft.airbnbexample.models.Region;
 
 import java.util.ArrayList;

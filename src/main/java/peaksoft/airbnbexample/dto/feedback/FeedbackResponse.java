@@ -14,5 +14,6 @@ public class FeedbackResponse {
     private Integer like;
     private Integer dislike;
     private Integer rating;
+    private Long announcementId;
     private LocalDate createdAt;
 }

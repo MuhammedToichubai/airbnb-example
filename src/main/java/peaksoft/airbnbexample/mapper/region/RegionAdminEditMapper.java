@@ -1,7 +1,7 @@
 package peaksoft.airbnbexample.mapper.region;
 
 import org.springframework.stereotype.Component;
-import peaksoft.airbnbexample.dto.region.RegionAdminRequest;
+import peaksoft.airbnbexample.dto.admin.RegionAdminRequest;
 import peaksoft.airbnbexample.models.Region;
 
 @Component

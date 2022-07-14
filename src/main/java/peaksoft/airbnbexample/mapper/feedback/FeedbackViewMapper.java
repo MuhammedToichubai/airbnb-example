@@ -14,9 +14,9 @@ public class FeedbackViewMapper {
         response.setId(feedback.getId());
         response.setImages(feedback.getImages());
         response.setDescription(feedback.getDescription());
-        response.setLikes(feedback.getLike());
-        response.setDislikes(feedback.getDislike());
-        response.setRatings(feedback.getRating());
+        response.setLike(feedback.getLike());
+        response.setDislike(feedback.getDislike());
+        response.setRating(feedback.getRating());
 
         return response;
     }

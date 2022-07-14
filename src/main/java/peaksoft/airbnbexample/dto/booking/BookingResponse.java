@@ -8,5 +8,7 @@ public class BookingResponse {
     private Long id;
     private String checkin;
     private String checkout;
+    private Long userId;
+    private Long announcementId;
 
 }
