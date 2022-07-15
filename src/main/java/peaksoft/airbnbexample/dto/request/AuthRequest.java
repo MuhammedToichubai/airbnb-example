@@ -1,9 +1,9 @@
-package peaksoft.airbnbexample.dto.user;
+package peaksoft.airbnbexample.dto.request;
 
 /**
  * @author Muhammed Toichubai
  */
-public class UserRequest {
+public class AuthRequest {
     private String email;
     private String password;
 }

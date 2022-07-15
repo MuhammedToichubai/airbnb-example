@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.dto.announcement;
+package peaksoft.airbnbexample.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,7 +11,7 @@ import java.util.List;
  * @author Muhammed Toichubai
  */
 @Getter @Setter
-public class AnnouncementRequest1 {
+public class AnnouncementRequest {
     private List<String> images;
     private Type houseType;
     private Integer maxGuests;

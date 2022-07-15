@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.dto.booking;
+package peaksoft.airbnbexample.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;
