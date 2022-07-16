@@ -5,6 +5,7 @@ import lombok.Setter;
 
 @Getter @Setter
 public class BookingResponse {
+
     private Long id;
     private String checkin;
     private String checkout;
