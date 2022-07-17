@@ -7,6 +7,7 @@ public enum Status {
     NEW,
     OLD,
     ACCEPTED,
-    CANCELED,
-    DELETED
+    REJECTED,
+    DELETED,
+    BLOCKED
 }

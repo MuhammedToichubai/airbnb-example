@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.dto.feedback;
+package peaksoft.airbnbexample.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,6 @@ import java.util.List;
 public class FeedbackRequest {
     private List<String> images;
     private String description;
-    private Integer like;
-    private Integer dislike;
     private Integer rating;
+    private Long announcementId;
 }

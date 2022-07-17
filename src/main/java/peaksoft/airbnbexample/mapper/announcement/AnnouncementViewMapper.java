@@ -1,7 +1,7 @@
 package peaksoft.airbnbexample.mapper.announcement;
 
 import org.springframework.stereotype.Component;
-import peaksoft.airbnbexample.dto.announcement.AnnouncementResponse1;
+import peaksoft.airbnbexample.dto.response.AnnouncementResponse;
 import peaksoft.airbnbexample.models.Announcement;
 
 import java.util.ArrayList;
@@ -9,11 +9,11 @@ import java.util.List;
 
 @Component
 public class AnnouncementViewMapper {
-    public AnnouncementResponse1 viewAnnouncement(Announcement announcement) {
+    public AnnouncementResponse viewAnnouncement(Announcement announcement) {
         if (announcement == null) {
             return null;
         }
-        AnnouncementResponse1 response1 = new AnnouncementResponse1();
+        AnnouncementResponse response1 = new AnnouncementResponse();
         response1.setId(announcement.getId());
         response1.setStatus(announcement.getStatus()); //OLD status Beksultan
         response1.setImages(announcement.getImages());
@@ -27,8 +27,8 @@ public class AnnouncementViewMapper {
         return response1;
     }
 
-    public List<AnnouncementResponse1> view(List<Announcement> announcements) {
-        List<AnnouncementResponse1> response1s = new ArrayList<>();
+    public List<AnnouncementResponse> view(List<Announcement> announcements) {
+        List<AnnouncementResponse> response1s = new ArrayList<>();
         for (Announcement response : announcements) {
             response1s.add(viewAnnouncement(response));
         }

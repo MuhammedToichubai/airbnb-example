@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.dto.user;
+package peaksoft.airbnbexample.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -7,7 +7,7 @@ import lombok.Setter;
  * @author Muhammed Toichubai
  */
 @Getter @Setter
-public class UserResponse {
+public class AuthResponse {
     private Long id;
     private String JWToken;
     private String role;

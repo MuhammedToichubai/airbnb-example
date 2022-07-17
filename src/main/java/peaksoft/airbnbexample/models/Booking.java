@@ -37,4 +37,6 @@ public class Booking {
     private LocalDate checkout;
 
     private Status status;
+
+    private LocalDate createdAt;
 }

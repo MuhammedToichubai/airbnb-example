@@ -41,7 +41,7 @@ public class Feedback {
 
     private Integer dislike;
 
-    private Integer rating;
+    private Double rating;
 
     @ManyToOne(cascade = ALL, fetch = LAZY)
     private Announcement announcement;
