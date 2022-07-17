@@ -2,6 +2,7 @@ package peaksoft.airbnbexample.apis;
 
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import peaksoft.airbnbexample.dto.response.RegionResponse;
@@ -18,10 +19,10 @@ public class RegionApi {
     public List<RegionResponse> getAllRegions(){return null;}
 
     @GetMapping("find/{regionId}")
-    public RegionResponse findById(){return null;}
+    public RegionResponse findById(@PathVariable Long regionId){return null;}
 
     @GetMapping("announcements/{regionId}")
-    public List<SimpleAnnouncementResponse> getRegionAnnouncements() {
+    public List<SimpleAnnouncementResponse> getRegionAnnouncements(@PathVariable Long regionId) {
         return null;
     }
 }
