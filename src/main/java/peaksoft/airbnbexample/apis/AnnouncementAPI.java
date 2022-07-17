@@ -1,7 +1,6 @@
 package peaksoft.airbnbexample.apis;
 
 import org.springframework.web.bind.annotation.*;
-import peaksoft.airbnbexample.dto.request.AnnouncementRequest;
 import peaksoft.airbnbexample.dto.request.BookingRequest;
 import peaksoft.airbnbexample.dto.response.*;
 
@@ -23,29 +22,38 @@ public class AnnouncementAPI {
 
 
     //PermitAll //popular apartments 7
-                //popular house 3
-                //latest announcements 7
-    @GetMapping("/popular")
-    public List<PopularAnnouncementResponse> getPopularAnnouncements() {
+    @GetMapping("/popular/apartments")
+    public List<PopularApartmentResponse> getPopularApartments(){
         return null;
     }
 
+    //popular house 3
+    @GetMapping("/popular/houses")
+    public List<PopularHousesResponse> getPopularHouses() {
+        return null;
+    }
+
+    //latest announcements 7
+    @GetMapping("/popular/latest")
+    public List<LatestAnnouncementResponse> getPopularAnnouncements(){
+        return null;
+    }
 
     //PermitAll
     @GetMapping("/find/{announcementId}")
-    public AnnouncementInnerPageResponse findAnnouncementById(@PathVariable Long announcementId){
+    public AnnouncementInnerPageResponse findAnnouncementById(@PathVariable Long announcementId) {
         return null;
     }
 
 
     @GetMapping("/feedback/{annoucementId}")
-    public List<FeedbackResponse> findFeedbacksByAnnouncement(@PathVariable Long announcementId){
+    public List<FeedbackResponse> findFeedbacksByAnnouncement(@PathVariable Long announcementId) {
         return null;
     }
 
     //User
     @PostMapping("/booking/save/{announcementId}")
-    public BookingResponse saveBooking(@PathVariable Long announcementId, @RequestBody BookingRequest bookingRequest){
+    public BookingResponse saveBooking(@PathVariable Long announcementId, @RequestBody BookingRequest bookingRequest) {
         return null;
     }
 

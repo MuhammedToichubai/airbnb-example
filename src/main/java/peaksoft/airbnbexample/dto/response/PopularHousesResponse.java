@@ -10,7 +10,7 @@ import java.util.List;
  * @author Altynbek Mamasadykov
  */
 @Getter @Setter
-public class PopularAnnouncementResponse {
+public class PopularHousesResponse {
 
     private String title;
     private List<String> images;
