@@ -49,7 +49,7 @@ public class AnnouncementAPI {
 
     //User
     @GetMapping("/feedbacks/{announcementId}")
-    public List<FeedbackResponse> getAllAnnouncementFeedbacks(@PathVariable Long announcementId, @PathVariable String annoucementId) {
+    public List<FeedbackResponse> getAllAnnouncementFeedbacks(@PathVariable Long announcementId) {
         return null;
     }
 
@@ -65,7 +65,7 @@ public class AnnouncementAPI {
         return null;
     }
 
-    @GetMapping("/rating/statics/{announcementId}")
+    @GetMapping("/rating/{announcementId}")
     public RatingResponse announcementRatingStatics(@PathVariable Long announcementId){
         return null;
     }
