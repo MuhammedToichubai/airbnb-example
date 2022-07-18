@@ -33,4 +33,8 @@ public class UserAPI {
     public UserAnnouncementResponse findUserAnnouncement(@PathVariable Long announcementId){
         return null;
     }
+
+
+
+
 }
