@@ -7,14 +7,18 @@ import org.springframework.web.bind.annotation.RestController;
 import peaksoft.airbnbexample.dto.response.UserAnnouncementResponse;
 import peaksoft.airbnbexample.dto.response.UserAnnouncementsResponse;
 import peaksoft.airbnbexample.dto.response.UserBookingsResponse;
+import peaksoft.airbnbexample.dto.response.UserResponse;
 
 import java.util.List;
-
 
 @RestController
 @RequestMapping("/api/user")
 public class UserAPI {
 
+    @GetMapping("/profile/{userId}")
+    public UserResponse viewUserProfile(@PathVariable Long userId){
+        return null;
+    }
     @GetMapping("/bookings/{announcementId}")
     public List<UserBookingsResponse> getUserAllBookings(@PathVariable Long announcementId){
         return null;
@@ -29,5 +33,4 @@ public class UserAPI {
     public UserAnnouncementResponse findUserAnnouncement(@PathVariable Long announcementId){
         return null;
     }
-
 }
