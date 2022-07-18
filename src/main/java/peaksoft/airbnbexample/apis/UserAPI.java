@@ -29,12 +29,9 @@ public class UserAPI {
         return null;
     }
 
-    @GetMapping("/annoncement/find/{announcementId}")
+    @GetMapping("/announcement/find/{announcementId}")
     public UserAnnouncementResponse findUserAnnouncement(@PathVariable Long announcementId){
         return null;
     }
-
-
-
 
 }
