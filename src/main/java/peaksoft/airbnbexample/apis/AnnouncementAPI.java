@@ -65,6 +65,11 @@ public class AnnouncementAPI {
         return null;
     }
 
+    @GetMapping("/rating/statics/{announcementId}")
+    public RatingResponse announcementRatingStatics(@PathVariable Long announcementId){
+        return null;
+    }
+
 //
 //    //User
 //    @PostMapping("/saveAnnouncement")
