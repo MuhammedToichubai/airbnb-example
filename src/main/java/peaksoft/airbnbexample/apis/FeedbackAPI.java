@@ -6,10 +6,23 @@ import peaksoft.airbnbexample.dto.request.LikeRequest;
 import peaksoft.airbnbexample.dto.response.FeedbackResponse;
 import peaksoft.airbnbexample.dto.response.SimpleResponse;
 
+import java.util.List;
+
 @RestController
 @RequestMapping
 public class FeedbackAPI {
 
+    //User
+    @GetMapping("/feedbacks/{announcementId}")
+    public List<FeedbackResponse> getAllAnnouncementFeedbacks(@PathVariable Long announcementId) {
+        return null;
+    }
+
+    //User
+    @PostMapping("/leave/feedback/{announcementId}")
+    public FeedbackResponse leaveFeedback(@RequestBody FeedbackRequest feedbackRequest, @PathVariable Long announcementId) {
+        return null;
+    }
 
     //User
     @PostMapping("/like/dislike")
@@ -21,11 +34,5 @@ public class FeedbackAPI {
     public SimpleResponse deleteFeedback(@PathVariable Long feedbackId){
         return null;
     }
-
-
-
-
-
-
 
 }

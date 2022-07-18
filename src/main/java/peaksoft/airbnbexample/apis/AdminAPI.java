@@ -3,10 +3,8 @@ package peaksoft.airbnbexample.apis;
 import org.springframework.web.bind.annotation.*;
 import peaksoft.airbnbexample.dto.request.AcceptRequest;
 import peaksoft.airbnbexample.dto.request.BlockRequest;
-import peaksoft.airbnbexample.dto.response.AcceptResponse;
-import peaksoft.airbnbexample.dto.response.AnnouncementResponse;
-import peaksoft.airbnbexample.dto.response.SimpleResponse;
-import peaksoft.airbnbexample.dto.response.UserResponse;
+import peaksoft.airbnbexample.dto.request.SimpleRequest;
+import peaksoft.airbnbexample.dto.response.*;
 
 import java.util.List;
 
@@ -15,41 +13,43 @@ import java.util.List;
 //ADMIN
 public class AdminAPI {
 
-    @GetMapping("/getAllAnnouncement")
-    public List<AnnouncementResponse> getAllAnnouncement() {
+
+    @GetMapping("/application")
+    public List<SimpleAnnouncementResponse> getAllAnnouncements(){
         return null;
     }
 
-    @GetMapping("/findById/{announcementId}")
-    public AnnouncementResponse findByIdAnnouncement(@PathVariable Long announcementId) {
+    @PutMapping("/change/status/{announcementId}")
+    public SimpleResponse changeStatusAnnouncement(@PathVariable Long announcementId){
+        return null;
+    }
+    @PostMapping("/change/status/{announcementId}")
+    public SimpleResponse changeStatusAnnouncement(@RequestBody SimpleRequest request, @PathVariable Long announcementId){
         return null;
     }
 
-    @PostMapping("/accept/reject")
-    public AcceptResponse acceptOrReject(@RequestBody AcceptRequest request) {
+    @GetMapping("/users")
+    public List<UserListResponse> getAllUsers(){
+        return null;
+    }
+    @DeleteMapping("/user/delete/{userId}")
+    public SimpleResponse deleteUser(@PathVariable Long userId){
         return null;
     }
 
-    @GetMapping("/allUsers}")
-    public List<UserResponse> getAllUsers() {
+    @DeleteMapping("/user/announcement/delete/{announcementId}")
+    public SimpleResponse deleteUserAnnouncement(@PathVariable Long announcementId){
         return null;
     }
 
-    @DeleteMapping("/deleteUser/{userId}")
-    public SimpleResponse deleteUser(@PathVariable Long userId) {
+    @PostMapping("/block/user/announcements")
+    public SimpleResponse blockUserAnnouncements(@RequestBody List<BlockRequest> blockRequests) {
         return null;
     }
 
-    //Admin, User
-    @GetMapping("user/allAnnouncemet/{userId}")
-    public List<AnnouncementResponse> userGetAllAnnouncement(@PathVariable Long userId) {
+    @GetMapping("/all/housing")
+    public List<UserAnnouncementResponse> getAllHousing(){
         return null;
     }
-
-    @PostMapping("block/user/announcements")
-    public SimpleResponse blockAnnouncements(@RequestBody List<BlockRequest> blockRequests) {
-        return null;
-    }
-
 
 }
