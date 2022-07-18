@@ -2,6 +2,7 @@ package peaksoft.airbnbexample.apis;
 
 import org.springframework.web.bind.annotation.*;
 import peaksoft.airbnbexample.dto.request.BookingRequest;
+import peaksoft.airbnbexample.dto.request.FeedbackRequest;
 import peaksoft.airbnbexample.dto.response.*;
 
 import java.util.List;
@@ -46,14 +47,26 @@ public class AnnouncementAPI {
     }
 
 
-    @GetMapping("/feedback/{annoucementId}")
-    public List<FeedbackResponse> findFeedbacksByAnnouncement(@PathVariable Long announcementId) {
+    //User
+    @GetMapping("/feedbacks/{announcementId}")
+    public List<FeedbackResponse> getAllAnnouncementFeedbacks(@PathVariable Long announcementId, @PathVariable String annoucementId) {
+        return null;
+    }
+
+    //User
+    @PostMapping("/leave/feedback/{announcementId}")
+    public FeedbackResponse leaveFeedback(@RequestBody FeedbackRequest feedbackRequest, @PathVariable Long announcementId){
         return null;
     }
 
     //User
     @PostMapping("/booking/save/{announcementId}")
     public BookingResponse saveBooking(@PathVariable Long announcementId, @RequestBody BookingRequest bookingRequest) {
+        return null;
+    }
+
+    @GetMapping("/rating/statics/{announcementId}")
+    public RatingResponse announcementRatingStatics(@PathVariable Long announcementId){
         return null;
     }
 

@@ -1,0 +1,18 @@
+server:
+    error:
+        include-message: always
+    port: 1009
+spring:
+    datasource:
+        driver-class-name: org.postgresql.Driver
+        password: yiman
+        url: jdbc:postgresql://localhost:5432/postgres
+        username: postgres
+    jpa:
+        database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+        hibernate:
+            ddl-auto: create
+        show-sql: true
+springdoc:
+    swagger-ui:
+        path: /a

@@ -8,7 +8,6 @@ import java.util.List;
 @Getter @Setter
 public class FeedbackRequest {
     private List<String> images;
-    private String description;
     private Integer rating;
-    private Long announcementId;
+    private String description;
 }

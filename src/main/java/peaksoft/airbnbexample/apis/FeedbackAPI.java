@@ -7,14 +7,10 @@ import peaksoft.airbnbexample.dto.response.FeedbackResponse;
 import peaksoft.airbnbexample.dto.response.SimpleResponse;
 
 @RestController
-@RequestMapping("/api/feedback")
+@RequestMapping
 public class FeedbackAPI {
 
-    //User
-    @PostMapping("/saveFeedback")
-    public FeedbackResponse saveFeedback(@RequestBody FeedbackRequest feedbackRequest){
-        return null;
-    }
+
     //User
     @PostMapping("/like/dislike")
     public FeedbackResponse saveLikesFeedback(@RequestBody LikeRequest likeRequest){
