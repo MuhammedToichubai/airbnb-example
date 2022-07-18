@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 
 @Getter @Setter
 public class BookingResponse {
-    private Long id;
+    private Long bookingId;
     private BigDecimal AnnouncementPrice;
     private String checkin;
     private String checkout;
