@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.dto.response;
+package peaksoft.airbnbexample.dto.res;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,7 +6,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 
 @Getter @Setter
-public class UserBookingsResponse {
+public class UserAnnouncementsResponse {
     private Long announcementId;
     private String image;
     private BigDecimal price;
@@ -14,8 +14,4 @@ public class UserBookingsResponse {
     private String title;
     private String location;
     private Integer maxGuests;
-    private String checkIn;
-    private String checkOut;
-
-
 }

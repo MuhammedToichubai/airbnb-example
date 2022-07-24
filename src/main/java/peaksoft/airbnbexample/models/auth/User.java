@@ -51,4 +51,13 @@ public class User {
 
     @OneToOne(cascade = ALL, fetch = LAZY)
     private Role role;
+
+    public User( String fullName, String email, String password, String image, Role role) {
+        this.fullName = fullName;
+        this.email = email;
+        this.password = password;
+        this.image = image;
+        this.role = role;
+
+    }
 }

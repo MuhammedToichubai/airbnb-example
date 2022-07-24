@@ -1,7 +1,7 @@
 package peaksoft.airbnbexample.mapper.booking;
 
 import org.springframework.stereotype.Component;
-import peaksoft.airbnbexample.dto.request.BookingRequest;
+import peaksoft.airbnbexample.dto.req.BookingRequest;
 import peaksoft.airbnbexample.models.Booking;
 
 import java.time.LocalDate;

@@ -1,9 +1,9 @@
 package peaksoft.airbnbexample.apis;
 
 import org.springframework.web.bind.annotation.*;
-import peaksoft.airbnbexample.dto.request.FeedbackRequest;
-import peaksoft.airbnbexample.dto.request.LikeRequest;
-import peaksoft.airbnbexample.dto.response.FeedbackResponse;
+import peaksoft.airbnbexample.dto.req.FeedbackRequest;
+import peaksoft.airbnbexample.dto.req.LikeRequest;
+import peaksoft.airbnbexample.dto.res.FeedbackResponse;
 import peaksoft.airbnbexample.dto.response.SimpleResponse;
 
 import java.util.List;

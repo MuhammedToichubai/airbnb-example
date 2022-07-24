@@ -28,4 +28,10 @@ public class Region {
 
     @OneToMany(cascade = {REFRESH, MERGE, DETACH, PERSIST}, fetch = EAGER, mappedBy = "region")
     private List<Address> addresses;
+
+    public Region(String regionName) {
+        this.regionName = regionName;
+    }
+
+
 }

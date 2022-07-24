@@ -1,10 +1,11 @@
 package peaksoft.airbnbexample.apis;
 
 import org.springframework.web.bind.annotation.*;
-import peaksoft.airbnbexample.dto.request.AcceptRequest;
-import peaksoft.airbnbexample.dto.request.BlockRequest;
-import peaksoft.airbnbexample.dto.request.SimpleRequest;
-import peaksoft.airbnbexample.dto.response.*;
+import peaksoft.airbnbexample.dto.req.BlockRequest;
+import peaksoft.airbnbexample.dto.req.SimpleRequest;
+import peaksoft.airbnbexample.dto.res.*;
+import peaksoft.airbnbexample.dto.response.SimpleResponse;
+import peaksoft.airbnbexample.services.AnnouncementService;
 
 import java.util.List;
 
@@ -13,9 +14,14 @@ import java.util.List;
 //ADMIN
 public class AdminAPI {
 
+    private final AnnouncementService announcementService;
+
+    public AdminAPI(AnnouncementService announcementService) {
+        this.announcementService = announcementService;
+    }
 
     @GetMapping("/application")
-    public List<SimpleAnnouncementResponse> getAllAnnouncements(){
+    public List<AdminAnnouncementResponse> getAllAnnouncements(){
         return null;
     }
 
@@ -23,6 +29,7 @@ public class AdminAPI {
     public SimpleResponse changeStatusAnnouncement(@PathVariable Long announcementId){
         return null;
     }
+
     @PostMapping("/change/status/{announcementId}")
     public SimpleResponse changeStatusAnnouncement(@RequestBody SimpleRequest request, @PathVariable Long announcementId){
         return null;
@@ -32,6 +39,7 @@ public class AdminAPI {
     public List<UserListResponse> getAllUsers(){
         return null;
     }
+
     @DeleteMapping("/user/delete/{userId}")
     public SimpleResponse deleteUser(@PathVariable Long userId){
         return null;

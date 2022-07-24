@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.dto.request;
+package peaksoft.airbnbexample.dto.res;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,8 +6,10 @@ import lombok.Setter;
 import java.util.List;
 
 @Getter @Setter
-public class FeedbackRequest {
+public class PopularApartmentResponse {
+
+    private String title;
     private List<String> images;
-    private Integer rating;
     private String description;
+    private String location;
 }

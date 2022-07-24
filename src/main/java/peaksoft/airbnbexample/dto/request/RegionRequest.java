@@ -4,6 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter @Setter
-public class SimpleRequest {
-    private String message;
+public class RegionRequest {
+    private String regionName;
 }

@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.dto.response;
+package peaksoft.airbnbexample.dto.res;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -23,7 +23,9 @@ public class AnnouncementResponse {
     private BigDecimal price;
     private Integer maxGuests;
     private Type houseType;
-
+    private String region;
+    private String townProvince;
+    private String address;
     private LocalDate createdAt;
 
 }

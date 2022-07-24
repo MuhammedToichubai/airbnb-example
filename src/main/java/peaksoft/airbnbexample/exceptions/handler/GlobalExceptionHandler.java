@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ExceptionResponse handlerBadRequestException(BadRequestException e) {
         return new ExceptionResponse(
-                HttpStatus.NOT_FOUND,
+                HttpStatus.BAD_REQUEST,
                 e.getClass().getSimpleName(),
                 e.getMessage()
         );

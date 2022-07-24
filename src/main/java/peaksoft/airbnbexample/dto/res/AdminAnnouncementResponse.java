@@ -1,4 +1,4 @@
-package peaksoft.airbnbexample.dto.response;
+package peaksoft.airbnbexample.dto.res;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -11,8 +11,7 @@ import java.util.List;
 
 @Getter
 @Setter
-public class SimpleAnnouncementResponse {
-
+public class AdminAnnouncementResponse {
     private Long announcementId;
     private String title;
     private List<String> images;

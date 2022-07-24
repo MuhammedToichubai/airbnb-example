@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.util.List;
+
 import static javax.persistence.CascadeType.*;
 import static javax.persistence.FetchType.LAZY;
 
@@ -32,6 +34,5 @@ public class Address {
 
     @OneToOne(cascade = {DETACH, REFRESH, PERSIST, MERGE}, fetch = FetchType.LAZY)
     private Announcement announcement;
-
 
 }

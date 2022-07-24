@@ -2,11 +2,8 @@ package peaksoft.airbnbexample.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;
-import peaksoft.airbnbexample.models.enums.Status;
 import peaksoft.airbnbexample.models.enums.Type;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 /**

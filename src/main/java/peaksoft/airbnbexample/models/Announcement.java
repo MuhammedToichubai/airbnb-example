@@ -3,6 +3,8 @@ package peaksoft.airbnbexample.models;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 import peaksoft.airbnbexample.models.auth.User;
 import peaksoft.airbnbexample.models.enums.Status;
 import peaksoft.airbnbexample.models.enums.Type;
@@ -21,6 +23,8 @@ import static javax.persistence.FetchType.LAZY;
 @NoArgsConstructor
 @Getter
 @Setter
+@SQLDelete(sql = "UPDATE Customer SET deleted = 1 WHERE id = ?")
+@Where(clause = "deleted = 0")
 public class Announcement {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "announcement_id_generator")
@@ -48,11 +52,10 @@ public class Announcement {
     @ManyToOne(cascade = {DETACH, MERGE, PERSIST, REFRESH}, fetch = EAGER)
     private User owner;
 
-    @OneToOne(cascade = ALL, fetch = LAZY, mappedBy = "announcement")
+    @OneToOne(cascade = ALL, fetch = LAZY)
     private Address location;
 
-    @ManyToMany(cascade = ALL,
-
+    @ManyToMany(cascade = {DETACH,MERGE,REFRESH,PERSIST},
             fetch = EAGER)
     private List<User> guests;
 
@@ -60,6 +63,8 @@ public class Announcement {
     private List<Booking> bookings;
 
     private LocalDate createdAt;
+
+    private boolean deleted;
 
 
 }

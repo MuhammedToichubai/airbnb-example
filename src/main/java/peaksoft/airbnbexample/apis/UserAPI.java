@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import peaksoft.airbnbexample.dto.response.*;
+import peaksoft.airbnbexample.dto.res.*;
 
 import java.util.List;
 
@@ -16,6 +16,7 @@ public class UserAPI {
     public UserResponse viewUserProfile(@PathVariable Long userId){
         return null;
     }
+
     @GetMapping("/bookings/{announcementId}")
     public List<UserBookingsResponse> getUserAllBookings(@PathVariable Long announcementId){
         return null;

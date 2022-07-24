@@ -1,14 +1,14 @@
 package peaksoft.airbnbexample.mapper.region;
 
 import org.springframework.stereotype.Component;
-import peaksoft.airbnbexample.dto.admin.RegionAdminRequest;
+import peaksoft.airbnbexample.dto.request.RegionRequest;
 import peaksoft.airbnbexample.models.Region;
 
 @Component
-public class RegionAdminEditMapper {
+public class RegionEditMapper {
 
-    public Region saveRegion(RegionAdminRequest request){
-        if (request == null){
+    public Region saveRegion(RegionRequest request) {
+        if (request == null) {
             return null;
         }
         Region region = new Region();
@@ -16,7 +16,7 @@ public class RegionAdminEditMapper {
         return region;
     }
 
-    public void updateRegion (RegionAdminRequest request, Region region){
+    public void updateRegion(RegionRequest request, Region region) {
         region.setRegionName(request.getRegionName());
     }
 }

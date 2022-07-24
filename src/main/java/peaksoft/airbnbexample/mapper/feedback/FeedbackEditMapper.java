@@ -1,7 +1,7 @@
 package peaksoft.airbnbexample.mapper.feedback;
 
 import org.springframework.stereotype.Component;
-import peaksoft.airbnbexample.dto.request.FeedbackRequest;
+import peaksoft.airbnbexample.dto.req.FeedbackRequest;
 import peaksoft.airbnbexample.models.Feedback;
 
 @Component

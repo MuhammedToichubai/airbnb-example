@@ -2,18 +2,17 @@ package peaksoft.airbnbexample.services;
 
 import org.springframework.stereotype.Service;
 import peaksoft.airbnbexample.dto.request.AnnouncementRequest;
-import peaksoft.airbnbexample.dto.response.AnnouncementResponse;
+import peaksoft.airbnbexample.dto.response.AnnouncementInnerPageResponse;
+import peaksoft.airbnbexample.dto.response.SimpleResponse;
 
-/**
- * @author Muhammed Toichubai
- */
 @Service
 public interface AnnouncementService {
-    AnnouncementResponse save(AnnouncementRequest request, Long userId);
 
-    AnnouncementResponse update(Long id, AnnouncementRequest request);
+    SimpleResponse announcementSave(AnnouncementRequest request);
 
-    AnnouncementResponse findById(Long id);
+    AnnouncementInnerPageResponse announcementFindById(Long announcementId);
 
-    AnnouncementResponse deleteBy(Long id);
+    SimpleResponse announcementUpdate(Long id, AnnouncementRequest request);
+
+    SimpleResponse announcementDelete(Long announcementId);
 }

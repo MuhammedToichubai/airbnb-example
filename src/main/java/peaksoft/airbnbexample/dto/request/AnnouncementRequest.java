@@ -7,18 +7,17 @@ import peaksoft.airbnbexample.models.enums.Type;
 import java.math.BigDecimal;
 import java.util.List;
 
-/**
- * @author Muhammed Toichubai
- */
-@Getter @Setter
+@Getter
+@Setter
 public class AnnouncementRequest {
+    private Long ownerId;
     private List<String> images;
     private Type houseType;
     private Integer maxGuests;
     private BigDecimal price;
     private String title;
     private String description;
-    private String region;
+    private Long regionId;
     private String townProvince;
     private String address;
 }
