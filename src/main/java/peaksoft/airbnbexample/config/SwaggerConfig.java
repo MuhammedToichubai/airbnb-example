@@ -18,7 +18,7 @@ public class SwaggerConfig {
         return new OpenAPI()
                 .components(new Components()
                         .addSecuritySchemes("Bearer Token", apiKeySecuritySchema()))
-                .info(new Info().title("Java 5 Swagger APP").description("Writen by: Beksultan Mamatkadyr uulu"))
+                .info(new Info().title("Airbnb").description("Written by: Kanatbek Ulukbek uulu"))
                 .security(List.of(new SecurityRequirement().addList("Bearer Token")));
     }
 

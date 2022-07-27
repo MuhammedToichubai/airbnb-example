@@ -18,7 +18,8 @@
     </properties>
     <dependencies>
 
-        <dependency>
+
+        <dependency><!--swagger dependency-->
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-ui</artifactId>
             <version>1.6.9</version>
